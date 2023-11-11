@@ -1,0 +1,30 @@
+body {
+  background: #fafafa !important;
+}
+
+.navbar {
+  margin-bottom: -20px;
+}
+.post-meta {
+  background-color: #fff;
+  text-align: left;
+  font-weight: bold;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.insta-post {
+  margin-bottom: 15px;   
+}
+
+.account-summary {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.follower-suggestion {
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}

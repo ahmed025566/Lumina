@@ -1,1 +1,20 @@
-hello there
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <% @posts.each do |post| %>
+        <div class="insta-post">
+          <div class="post-meta"><%= post.account.username %></div>
+          <%= image_tag(post.images[0], style: "min-width: 100%; height: auto; object-fit: contain;") %>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-4">
+      <div class="account-summary">
+        <p><strong><%= current_account.username %></strong><br />
+        <%= current_account.full_name %></p>
+      </div>
+      <div class="follower-suggestion">
+      </div>
+    </div>
+  </div>
+</div>
