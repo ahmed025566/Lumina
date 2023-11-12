@@ -5,5 +5,6 @@ class AccountsController < ApplicationController
 
   def profile
     @account = Account.find_by_username(params[:username])
+    @posts = @account.posts.active
   end
 end

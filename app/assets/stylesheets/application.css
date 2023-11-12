@@ -28,3 +28,18 @@ body {
   border: 1px solid #ddd;
   border-radius: 3px;
 }
+
+.profile-pic {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+
+.profile-stats {
+  width: 120px;
+  float: left;
+}
+
+.profile-posts {
+  margin-top: 50px;
+}
