@@ -14,7 +14,17 @@ body {
 }
 
 .insta-post {
-  margin-bottom: 15px;   
+  margin-bottom: 15px;
+}
+
+.insta-post-image {
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  height: auto; 
+  object-fit: contain;
+
 }
 
 .account-summary {
@@ -24,15 +34,15 @@ body {
 
 .follower-suggestion {
   background-color: #fff;
-  padding: 10px;
+  padding: 15px;
   border: 1px solid #ddd;
   border-radius: 3px;
 }
 
 .profile-pic {
   border-radius: 50%;
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
 }
 
 .profile-stats {
@@ -42,4 +52,38 @@ body {
 
 .profile-posts {
   margin-top: 50px;
+}
+
+.postAccountPic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.text-dark {
+  text-decoration: none;
+}
+
+.post-details {
+  background-color: #fff;
+  padding: 15px;
+  border: 1px solid #ddd;
+}
+
+.post-actions {
+  margin-bottom: 20px;
+}
+.post-like, .post-comment {
+  margin-right: 10px;
+  color: #ddd;
+  cursor: pointer;
+}
+
+.post-actions  .active {
+  color: #555;
+}
+
+.post-like:hover , .post-comment:hover {
+  color: #999;
 }
