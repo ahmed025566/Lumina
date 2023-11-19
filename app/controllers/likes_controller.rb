@@ -3,9 +3,9 @@ class LikesController < ApplicationController
     @like = Like.new(account: current_account, post_id: params[:post_id])
     @post_id = params[:post_id]
     exisiting_like = Like.where(account: current_account, post_id: params[:post_id])
-    Post.find(@post_id).update(likes_counter: Post.find(params[:post_id]).likes.count)
+
     respond_to do |format|
-      format.js {
+      format.js do
         if exisiting_like.any?
           exisiting_like.first.destroy
           @success = false
@@ -14,9 +14,9 @@ class LikesController < ApplicationController
         else
           @success = false
         end
-        
+        @post_likes = Post.find(@post_id).likes_counter
         render 'posts/like'
-      }
+      end
     end
   end
 end

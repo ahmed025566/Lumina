@@ -46,8 +46,9 @@ body {
 }
 
 .profile-stats {
-  width: 120px;
-  float: left;
+  max-width: 360px;
+  
+  margin-bottom: 30px;
 }
 
 .profile-posts {
@@ -86,4 +87,9 @@ body {
 
 .post-like:hover , .post-comment:hover {
   color: #999;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
 }

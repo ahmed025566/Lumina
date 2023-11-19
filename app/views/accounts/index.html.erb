@@ -4,17 +4,17 @@
       <% @posts.each do |post| %>
         <div class="insta-post">
           <div class="post-meta">
-          <%= link_to image_tag(post.account.image, class: 'postAccountPic'), profile_path(post.account.username) %>
+          <%= link_to profile_picture(post.account, 'postAccountPic'), profile_path(post.account.username) %>
           <%= link_to post.account.username, profile_path(post.account.username), class: 'text-dark' %></div>
-          <%= image_tag(post.images[0], class: 'insta-post-image') %>
+          <%= image_tag(post.images[0], class: 'insta-post-image') if post.images.present? %>
           
           <div class="post-details">
           <div class="post-actions">
             <i class="fa fa-heart fa-2x like-<%= post.id %> <%= 'active' if post_liked_by_user?(post.id) %> post-like" data-id= "<%= post.id %>" ></i>
             <i class="fa fa-comment fa-2x post-comment"></i>
           </div>
-          <p><strong><%= post.likes_counter %> likes</strong></p>
-          <p><strong>
+          <p id="post-<%= post.id %>-likes"><strong><%= post.likes_counter || 0 %> likes</strong></p>
+          <p id="post-<%= post.id %>-comments"><strong>
             <%= link_to post.account.username, profile_path(post.account.username), class: "text-dark" %>
           </strong></p>
           <%= simple_format post.description %>
@@ -26,7 +26,7 @@
     <div class="col-4">
       <div class="account-summary">
         <p>
-          <%= link_to image_tag(current_account.image, class: 'postAccountPic'), profile_path(current_account.username) if current_account.image.present? %>
+          <%= link_to profile_picture(current_account, 'postAccountPic'), profile_path(current_account.username) %>
           <strong><%= current_account.username %></strong>
         </p>
         <p class="text-muted"><%= current_account.full_name %></p>
@@ -35,7 +35,23 @@
        
         <%= link_to 'View All' , "#", class: "float-end text-dark" %>
         <p class="text-muted">Suggestions for you</p>
+        <%= render 'accounts/follower_suggestions' %>
       </div>
     </div>
   </div>
 </div>
+<script>
+$(function() {
+  $('.post-like').on("click", (e) => {
+    var post_id = e.target.getAttribute('data-id')
+    $.ajax({
+      url: "post/like/"+post_id,
+      method: 'GET'
+    }).done((res) => {
+      console.log(res)
+    })
+  })
+})
+
+
+</script>
