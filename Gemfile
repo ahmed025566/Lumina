@@ -72,3 +72,6 @@ end
 gem 'devise'
 gem 'jquery-rails'
 gem 'rubocop', '>= 1.0', '< 2.0'
+gem 'sass-rails'
+gem 'omniauth-facebook'
+

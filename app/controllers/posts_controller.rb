@@ -1,7 +1,10 @@
 class PostsController < ApplicationController
+  before_action :authenticate_account!
+
   def show
     @post = Post.find(params[:id]) if params[:id].present?
     @comment = Comment.new
+    @comments = Comment.includes(:account).where(post_id: @post.id)
   end
 
   def new

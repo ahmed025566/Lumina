@@ -1,7 +1,8 @@
-<% post.comments.each do |comment| %>
+<% comments.each do |comment| %>
   <div class="comment">
-    <strong><%= comment.account.username %></strong>
+    <%= link_to image_tag(comment.account.image, class: 'commenterPicture'), profile_path(comment.account.username) if comment.account.image.present? %>
+    <strong><%= link_to comment.account.username, profile_path(comment.account.username), class: 'text-dark' %></strong>
     <%= comment.comment %>
-    <p class="text-muted"><%= time_ago_in_words comment.created_at%> ago</p>
+    <p class="text-muted m-1-30"><%= time_ago_in_words comment.created_at%> ago</p>
   </div>
 <% end %>

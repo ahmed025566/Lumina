@@ -24,8 +24,15 @@
   <div class="row profile-posts">
     <% @posts.each do |post| %>
       <div class="col-4">
-        <div class="insta-post">
-          <%= link_to image_tag(post.images[0], style: "max-width: 100%; min-width: 100%; height: auto; object-fit: contain;"), post_path(post) if post.images.present? %>
+        <div class="insta-post post-square" style="background-image: url(<%= rails_blob_url(post.images[0]) %>)">
+          <%= link_to post_path(post) do %>
+            <div class="post-stats">
+              <div class="inner">
+                <i class="fa fa-heart"></i><%= post.likes_counter %>
+                <i class="fa fa-comment m-1-15"></i><%= post.comments_counter %>
+              </div>
+            </div>
+          <% end %>
         </div>
       </div>
     <% end %>

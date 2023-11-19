@@ -1,4 +1,6 @@
 class LikesController < ApplicationController
+  before_action :authenticate_account!
+
   def save_like
     @like = Like.new(account: current_account, post_id: params[:post_id])
     @post_id = params[:post_id]
