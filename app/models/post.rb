@@ -5,6 +5,7 @@ class Post < ApplicationRecord
 
   belongs_to :account
   has_many :likes
+  has_many :comments
 
   has_many_attached :images
 
@@ -14,7 +15,4 @@ class Post < ApplicationRecord
     self.active = true
   end
 
-  def total_likes
-    0
-  end
 end

@@ -4,8 +4,12 @@
       <%= profile_picture(@account, 'profile-pic') %>
     </div>
     <div class="col-8" style= "text-align: left">
-      <h1> <%= @account.full_name %> </h1>
-      <%= link_to 'Edit Profile', edit_account_registration_path, class: "btn btn-secondary" if can_edit_profile?(@account.id) %>
+      <div class="row">
+        <div class="col-7">
+          <%= link_to 'Edit Profile', edit_account_registration_path, class: "btn btn-muted btn-custom float-end" if can_edit_profile?(@account.id) %>
+          <h1> <%= @account.full_name %> </h1>
+        </div>
+      </div>
       <div class="row profile-stats">
           <div class="col-4"><%= @account.posts.count%> posts</div>
         <div class="col-4"><%= @account.total_followers%> followers</div>
@@ -21,7 +25,7 @@
     <% @posts.each do |post| %>
       <div class="col-4">
         <div class="insta-post">
-          <%= image_tag(post.images[0], style: "max-width: 100%; min-width: 100%; height: auto; object-fit: contain;") if post.images.present? %>
+          <%= link_to image_tag(post.images[0], style: "max-width: 100%; min-width: 100%; height: auto; object-fit: contain;"), post_path(post) if post.images.present? %>
         </div>
       </div>
     <% end %>

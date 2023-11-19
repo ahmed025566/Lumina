@@ -3,7 +3,9 @@ body {
 }
 
 .navbar {
+  padding: 14px 16px !important;
   margin-bottom: -20px;
+  border-bottom: 1px solid #ddd;
 }
 .post-meta {
   background-color: #fff;
@@ -82,7 +84,7 @@ body {
 }
 
 .post-actions  .active {
-  color: #555;
+  color: #ff0000;
 }
 
 .post-like:hover , .post-comment:hover {
@@ -92,4 +94,35 @@ body {
 .flex {
   display: flex;
   justify-content: space-between;
+}
+
+.comments-box {
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.post-comment {
+  box-shadow: none !important;
+}
+
+.btn-custom {
+  background: transparent;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+}
+
+.btn-custom:hover {
+  background-color: #ddd !important;
+}
+
+.comments-feed {
+  height: 300px;
+  overflow-y: scroll;
+}
+
+.post-detail, .post-actions {
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+  margin-top: 20px;
 }

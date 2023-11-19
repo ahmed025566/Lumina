@@ -1,5 +1,8 @@
 class PostsController < ApplicationController
-  def show; end
+  def show
+    @post = Post.find(params[:id]) if params[:id].present?
+    @comment = Comment.new
+  end
 
   def new
     @post = Post.new
