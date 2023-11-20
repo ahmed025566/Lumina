@@ -71,7 +71,6 @@ group :test do
 end
 gem 'devise'
 gem 'jquery-rails'
+gem 'omniauth-facebook'
 gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'sass-rails'
-gem 'omniauth-facebook'
-

@@ -8,10 +8,10 @@ class Like < ApplicationRecord
   after_create :increase_post_likes_counter
 
   def increase_post_likes_counter
-    Post.find(self.post_id).increment(:likes_counter).save
+    Post.find(post_id).increment(:likes_counter).save
   end
 
   def decrease_post_likes_counter
-    Post.find(self.post_id).decrement(:likes_counter).save
+    Post.find(post_id).decrement(:likes_counter).save
   end
 end

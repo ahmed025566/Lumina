@@ -14,5 +14,4 @@ class Post < ApplicationRecord
   def set_active
     self.active = true
   end
-
 end
