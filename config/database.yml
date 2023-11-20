@@ -82,3 +82,13 @@ test:
 production:
   <<: *default
   url: <%= ENV['DATABASE_URL'] %>
+#
+# Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
+# for a full overview on how database connection configuration can be specified.
+#
+production:
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
+  database: lumina_production
+  username: lumina_render
+  password: <%= ENV['MY_APP_RENDER_DATABASE_PASSWORD'] %>
