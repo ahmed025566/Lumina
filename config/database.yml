@@ -20,11 +20,7 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  host : localhost
-  port: 5432
-  user: ahmed_rails
-  password: AAAeee01115271148
-
+  
 development:
   <<: *default
   database: Instagram_clone_development
@@ -85,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: Instagram_clone_production
-  username: Instagram_clone
-  password: <%= ENV["INSTAGRAM_CLONE_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
