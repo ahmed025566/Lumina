@@ -1,6 +1,6 @@
 databases:
   - name: Lumina
-    databaseName: Lumina
+    databaseName: lumina
     user: mysite
 
 services:
