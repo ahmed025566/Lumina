@@ -17,6 +17,8 @@
               <% end %>
             </div>
             <p id="post-<%= post.id %>-likes"><strong><%= post.likes_counter || 0 %> likes</strong></p>
+            <p id="post-<%= post.id %>-likes"><strong><%= post.comments_counter || 0 %> comments</strong></p>
+
             <p id="post-<%= post.id %>-comments"><strong>
               <%= link_to post.account.username, profile_path(post.account.username), class: "text-dark" %>
             </strong></p>

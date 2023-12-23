@@ -74,6 +74,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_19_071438) do
     t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
+
+  
   create_table "followers", force: :cascade do |t|
     t.bigint "follower_id"
     t.bigint "following_id"
